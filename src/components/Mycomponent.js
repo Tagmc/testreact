@@ -13,10 +13,24 @@ class MyComponent extends React.Component
     //render la tap hop cac khoi html de chuyen no thanh giao dien
     //JSX la 1 cu phap dac biet cua JS (JSX cho phep viet code cua JS trong HTML)
     //JSX chi co the return ve 1 phan tu(1 element)
+    handleClick(event)
+    {
+        console.log(">> My name is");
+        console.log(event.target)
+    }
+    handlemouse(event)
+    {
+        console.log(event.target)
+    }
   render(){
     return (
         <div>my first component
             My name is {this.state.name}
+            {/* khi miinh viết button như kia thì chỉ nó nút click me bấm vào k có ra gì cả
+            vì vậy mình cần phải có sự kiện onClick trong button */}
+            <button onClick={this.handleClick}>click me</button>
+            <button onMouseOver={this.handlemouse}>click me now</button>
+            
         </div>
     );
   }
